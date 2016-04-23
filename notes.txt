@@ -1,3 +1,35 @@
+1 - alistapart : for web developers.
+2 - Responsive design is an art not a science.
+3 - https://www.browserstack.com/
+4 - Udacity feedback extension.
+5 - Viewport - Area of screen that browser can render content to.
+6 - Device Independent Pixel- Same amount of space regardless of pixel density. Device pixel ratio is the ratio between physical pixels and logical pixels(DIP).
+	DIp will take same amount of space on display regardless of pixel density of display. DIP reported by browser. Physical reported by product info.
+	Viewport width = physical pixel/ Device pixel ratio .
+7 - https://developer.mozilla.org/en-US/docs/Mozilla/Mobile/Viewport_meta_tag
+8 - width = device-width : allows page to reflow content to match screen size. Initial-scale=1 instructs browsers to establish 1:1 relationship b/w dip and css pixel, so we need to worry about css only.
+9 - Tap targets must be 48 by 48 pixel or at least there is 40 pixel of room b/w 2 tap targets.
+10 - max-width for fitting image in container.
+11 - Start from small screens first, performance is improved.
+
+srcset attribute on image and picture element.
+Hidden columns, No more column, contained tables.
+Hidden : essentially hide columns based on importance as viewport gets smaller. Use abbreviated data instead of hiding completely. Use with caution.
+No more table: table collapses into a list with all data visible.
+	@media screen and (max-width: 500px) {
+        table, thead, tbody, th, td, tr { display: block; }
+        thead tr {position: absolute; top: -9999px; left: -9999px; }
+        td {position: relative; padding-left: 50%; }
+        td:before {  position: absolute; left: 6px; content: attr(data-th); font-weight: bold; }
+        td:first-of-type { font-weight: bold; }
+    }
+	https://css-tricks.com/responsive-data-table-roundup/
+Contained tables: wrap table in div with class "contained_table" and
+	.contained_table{width: 100%; overflow-x: auto;}
+Fonts : (length of a line )45-90 characters per line, but generally 65.
+	base font : 16px and 1.2em line height or (18px and 1.25em)
+Minor breakpoints: Adjust margin/padding or change font size.
+
 Responsive Patterns : 
 	Column Drop : Initial all elements stack vertically taking full space. At first breakpoint 2 element are side by side and 3 beneath. At second breakpoint all side by side.
 	.container {display : flex , flex-wrap : wrap} , The  apply mediaquery with min-width and change width correspondingly.
