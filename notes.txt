@@ -1,0 +1,12 @@
+Responsive Patterns : 
+	Column Drop : Initial all elements stack vertically taking full space. At first breakpoint 2 element are side by side and 3 beneath. At second breakpoint all side by side.
+	.container {display : flex , flex-wrap : wrap} , The  apply mediaquery with min-width and change width correspondingly.
+	Mostly Fluid : similar to column drop but bit more grid like.  At last breakpoint margin are added left and right.
+	Layout Shifter : most responsive. Using rder css attribute. Instead of reflowing or droping below other column, flex box shite with order attribute.
+	Layout shift at each breakpoint.
+	Off Canvas : Less frequently content(like navbar) off screen only showing if size is bigger.
+		nav {width: 300px; height: 100%; position: absolute; transform: translate(-300px,0); transition: transform 0.3s ease;}
+		nav.open{transform: (0,0);}
+		@media screen and (min-width: 600px) { nav{position:relative; transform: (0,0); } body{display : flex; flex-flow : row nowrap;} main{width : auto; flex-grow:1;}}
+		When user click button open class is added and removed(toggle), this open class make sure that transform is 0 when its its added and transform is set
+		when class is removed, this make menu appear and go away on clicks.
